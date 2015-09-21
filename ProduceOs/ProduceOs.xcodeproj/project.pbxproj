@@ -103,12 +103,12 @@
 				ECB4E7A81BAFB3AB0047641A /* Price.swift */,
 			);
 			name = Models;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		ECC4B3031BA7E8770001DEFF = {
 			isa = PBXGroup;
 			children = (
-				ECB4E7A71BAFB3970047641A /* Models */,
 				ECB4E7A11BAF96D40047641A /* ProduceOs.xcworkspace */,
 				ECB4E7A21BAF96D40047641A /* Podfile.lock */,
 				ECB4E7A31BAF96D40047641A /* Podfile */,
@@ -134,6 +134,7 @@
 		ECC4B30E1BA7E8770001DEFF /* ProduceOs */ = {
 			isa = PBXGroup;
 			children = (
+				ECB4E7A71BAFB3970047641A /* Models */,
 				ECC4B30F1BA7E8770001DEFF /* AppDelegate.swift */,
 				ECC4B3111BA7E8770001DEFF /* PricesController.swift */,
 				ECC4B3131BA7E8770001DEFF /* SalesController.swift */,

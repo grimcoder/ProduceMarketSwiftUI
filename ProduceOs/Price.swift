@@ -9,8 +9,8 @@
 import Foundation
 
 class Price {
-    var Price: Double?
-    var ItemName: String?
+    var Price: Double
+    var ItemName: String
     var Id: String?
     
     
