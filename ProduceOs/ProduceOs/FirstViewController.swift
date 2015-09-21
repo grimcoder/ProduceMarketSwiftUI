@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import Alamofire_SwiftyJSON
 
 class FirstViewController: UIViewController {
 

@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (2.0.2)
+  - Alamofire-SwiftyJSON (2.0.0-beta.1)
+  - SwiftyJSON (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Alamofire-SwiftyJSON (from `https://raw.githubusercontent.com/pdutourgeerling/Alamofire-SwiftyJSON-Podspec/master/Alamofire-SwiftyJSON.podspec`)
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Alamofire-SwiftyJSON:
+    :podspec: https://raw.githubusercontent.com/pdutourgeerling/Alamofire-SwiftyJSON-Podspec/master/Alamofire-SwiftyJSON.podspec
+
+CHECKOUT OPTIONS:
+  Alamofire-SwiftyJSON:
+    :commit: edee0486d60489807c6488e5f0d08b32c1985d92
+    :git: https://github.com/SwiftyJSON/Alamofire-SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  Alamofire-SwiftyJSON: e394c54579b41d18d2aa1b88adf9fd6a2351e888
+  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+
+COCOAPODS: 0.38.2
