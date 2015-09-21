@@ -1,14 +1,6 @@
-//
-//  SecondViewController.swift
-//  ProduceOs
-//
-//  Created by Taras Kovtun on 9/14/15.
-//  Copyright © 2015 Taras Kovtun. All rights reserved.
-//
-
 import UIKit
 
-class SecondViewController: UIViewController {
+class SalesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -53,7 +53,7 @@
         <!--Prices-->
         <scene sceneID="P4l-PV-BkB">
             <objects>
-                <tableViewController id="mxi-Iu-8cs" customClass="FirstViewController" customModule="ProduceOs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mxi-Iu-8cs" customClass="PricesController" customModule="ProduceOs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6sE-Ot-JdH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +124,7 @@
         <!--Sales-->
         <scene sceneID="gmg-Zk-B9d">
             <objects>
-                <tableViewController id="ytF-qZ-g5K" sceneMemberID="viewController">
+                <tableViewController id="ytF-qZ-g5K" customClass="SalesController" customModule="ProduceOs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZYj-pW-xMm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
