@@ -28,7 +28,7 @@ class PricesController: UITableViewController , UISearchBarDelegate, UISearchDis
                     self.prices.append(Price(Id: json["Id"].stringValue, ItemName: json["ItemName"].stringValue, Price: json["Price"].doubleValue))
                 }
                         self.tableView.reloadData()
-                self.refreshControl!.endRefreshing()
+                        self.refreshControl!.endRefreshing()
             })
     }
     
@@ -65,7 +65,7 @@ class PricesController: UITableViewController , UISearchBarDelegate, UISearchDis
     }
     
     @IBAction func NewPrice(sender: AnyObject) {
-        let a = 0
+        self.performSegueWithIdentifier("priceSave", sender: tableView)
     }
     
     override func viewDidLoad() {
@@ -91,17 +91,52 @@ class PricesController: UITableViewController , UISearchBarDelegate, UISearchDis
             
             if editingStyle == .Delete{
                 /* First remove this object from the source */
-                let price = prices[indexPath.row]
-                prices.removeAtIndex(indexPath.row)
+                var price : Price
+                if tableView == self.searchDisplayController!.searchResultsTableView {
+                    price = filteredPrices[indexPath.row]
+                    filteredPrices.removeAtIndex(indexPath.row)
+                    prices = prices.filter({ (
+                        sprice: Price) -> Bool in
+                            return sprice.Id != price.Id
+                    })
+                    
+                } else {
+                    price = prices[indexPath.row]
+                    prices.removeAtIndex(indexPath.row)
+                }
+    
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
                 deletePrice(price.Id!)
                 
             }
-            
     }
     
+    func searchDisplayController(controller: UISearchDisplayController, didHideSearchResultsTableView tableView: UITableView){
+        
+        loadPrices()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let priceController = segue.destinationViewController as! PriceEditNewController
+        
+        if segue.identifier == "priceEdit" {
+            priceController.price = sender as! Price
+        }
+        else
+        {
+            
+        }
+        
+        }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("priceEdit", sender: tableView)
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+
+            self.performSegueWithIdentifier("priceEdit", sender: filteredPrices[indexPath.row])
+        }
+        else{
+        self.performSegueWithIdentifier("priceEdit", sender: prices[indexPath.row])
+        }
     }
     
 

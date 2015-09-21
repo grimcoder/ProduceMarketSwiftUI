@@ -12,6 +12,7 @@
 		ECB4E7A51BAF96D40047641A /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = ECB4E7A21BAF96D40047641A /* Podfile.lock */; };
 		ECB4E7A61BAF96D40047641A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ECB4E7A31BAF96D40047641A /* Podfile */; };
 		ECB4E7A91BAFB3AB0047641A /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4E7A81BAFB3AB0047641A /* Price.swift */; };
+		ECB4E7AB1BAFE9B30047641A /* PriceEditNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB4E7AA1BAFE9B30047641A /* PriceEditNewController.swift */; };
 		ECC4B3101BA7E8770001DEFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4B30F1BA7E8770001DEFF /* AppDelegate.swift */; };
 		ECC4B3121BA7E8770001DEFF /* PricesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4B3111BA7E8770001DEFF /* PricesController.swift */; };
 		ECC4B3141BA7E8770001DEFF /* SalesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4B3131BA7E8770001DEFF /* SalesController.swift */; };
@@ -47,6 +48,7 @@
 		ECB4E7A21BAF96D40047641A /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		ECB4E7A31BAF96D40047641A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		ECB4E7A81BAFB3AB0047641A /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		ECB4E7AA1BAFE9B30047641A /* PriceEditNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceEditNewController.swift; sourceTree = "<group>"; };
 		ECC4B30C1BA7E8770001DEFF /* ProduceOs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProduceOs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC4B30F1BA7E8770001DEFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC4B3111BA7E8770001DEFF /* PricesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				ECC4B3181BA7E8770001DEFF /* Assets.xcassets */,
 				ECC4B31A1BA7E8770001DEFF /* LaunchScreen.storyboard */,
 				ECC4B31D1BA7E8770001DEFF /* Info.plist */,
+				ECB4E7AA1BAFE9B30047641A /* PriceEditNewController.swift */,
 			);
 			path = ProduceOs;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				ECC4B3141BA7E8770001DEFF /* SalesController.swift in Sources */,
 				ECB4E7A91BAFB3AB0047641A /* Price.swift in Sources */,
 				ECC4B3101BA7E8770001DEFF /* AppDelegate.swift in Sources */,
+				ECB4E7AB1BAFE9B30047641A /* PriceEditNewController.swift in Sources */,
 				ECC4B3121BA7E8770001DEFF /* PricesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

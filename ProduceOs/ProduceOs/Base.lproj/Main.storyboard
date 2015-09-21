@@ -94,6 +94,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="7YG-yg-p9e" id="msW-UU-sYb"/>
                         <segue destination="LUa-P8-TIB" kind="show" identifier="priceEdit" id="dF9-9o-UGw"/>
+                        <segue destination="LUa-P8-TIB" kind="show" identifier="priceSave" id="UGL-KU-dsS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DX3-Kw-kQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="519" y="-1186"/>
         </scene>
-        <!--View Controller-->
+        <!--Price Edit New Controller-->
         <scene sceneID="rx9-lj-bJ6">
             <objects>
-                <viewController id="LUa-P8-TIB" sceneMemberID="viewController">
+                <viewController id="LUa-P8-TIB" customClass="PriceEditNewController" customModule="ProduceOs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t8I-vf-XDK"/>
                         <viewControllerLayoutGuide type="bottom" id="8ZD-Jz-d57"/>
@@ -120,8 +121,36 @@
                     <view key="view" contentMode="scaleToFill" id="O2L-RP-Hbo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf9-cz-Zyo">
+                                <rect key="frame" x="18" y="97" width="134" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-Ih-WIQ">
+                                <rect key="frame" x="90" y="91" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbL-kc-A9Q">
+                                <rect key="frame" x="90" y="135" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IW-Ev-OUo">
+                                <rect key="frame" x="18" y="136" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="NameBox" destination="DXP-Ih-WIQ" id="lcc-qN-fpy"/>
+                        <outlet property="PriceBox" destination="FbL-kc-A9Q" id="PMj-Hk-lQ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAd-5S-E5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,4 +385,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UGL-KU-dsS"/>
+    </inferredMetricsTieBreakers>
 </document>
