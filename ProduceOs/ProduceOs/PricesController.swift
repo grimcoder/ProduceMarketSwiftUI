@@ -12,23 +12,30 @@ import Alamofire_SwiftyJSON
 import SwiftyJSON
 
 
-class PricesController: UITableViewController , UISearchBarDelegate, UISearchDisplayDelegate{
+class PricesController: UITableViewController , UISearchBarDelegate, UISearchDisplayDelegate {
     
     var prices = [Price]()
     
     var filteredPrices = [Price]()
     
     func loadPrices(){
+        prices = [Price]()
+        filteredPrices = [Price]()
         Alamofire.request(.GET, "http://127.0.0.1:3001/api/prices", parameters: nil)
             .responseSwiftyJSON({ (request, response, json, error) in
                 
                 for (key,json):(String, JSON) in json {
                     self.prices.append(Price(Id: json["Id"].stringValue, ItemName: json["ItemName"].stringValue, Price: json["Price"].doubleValue))
                 }
-                
                         self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
             })
     }
+    
+    func deletePrice(id: String){
+        Alamofire.request(.DELETE, "http://127.0.0.1:3001/api/prices", parameters: ["id": id])
+    }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
@@ -57,10 +64,46 @@ class PricesController: UITableViewController , UISearchBarDelegate, UISearchDis
         return cell!
     }
     
+    @IBAction func NewPrice(sender: AnyObject) {
+        let a = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+            navigationItem.setLeftBarButtonItem(editButtonItem(), animated: false)
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self,
+            action: "handleRefresh:",
+            forControlEvents: .ValueChanged)
+        
+        tableView.addSubview(refreshControl!)
         loadPrices()
     }
+    
+    func handleRefresh(paramSender: AnyObject){
+        loadPrices()
+    }
+    
+    
+    override func tableView(tableView: UITableView,
+        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+        forRowAtIndexPath indexPath: NSIndexPath){
+            
+            if editingStyle == .Delete{
+                /* First remove this object from the source */
+                let price = prices[indexPath.row]
+                prices.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+                deletePrice(price.Id!)
+                
+            }
+            
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("priceEdit", sender: tableView)
+    }
+    
 
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)

@@ -83,11 +83,17 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Prices" image="first" id="MLN-Ae-HHy"/>
                     <navigationItem key="navigationItem" title="Prices" id="W2L-sR-BVn">
-                        <barButtonItem key="backBarButtonItem" title="Bback" id="lRb-9d-yo4"/>
+                        <barButtonItem key="backBarButtonItem" title="Prices" id="lRb-9d-yo4"/>
+                        <barButtonItem key="rightBarButtonItem" title="New" id="FWk-SN-ZBB">
+                            <connections>
+                                <action selector="NewPrice:" destination="mxi-Iu-8cs" id="Ule-9M-U3j"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="7YG-yg-p9e" id="msW-UU-sYb"/>
+                        <segue destination="LUa-P8-TIB" kind="show" identifier="priceEdit" id="dF9-9o-UGw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DX3-Kw-kQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,7 +107,25 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="623" y="-1178"/>
+            <point key="canvasLocation" x="519" y="-1186"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rx9-lj-bJ6">
+            <objects>
+                <viewController id="LUa-P8-TIB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t8I-vf-XDK"/>
+                        <viewControllerLayoutGuide type="bottom" id="8ZD-Jz-d57"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O2L-RP-Hbo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAd-5S-E5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="-1185"/>
         </scene>
         <!--Item-->
         <scene sceneID="YMk-Qj-2IG">
