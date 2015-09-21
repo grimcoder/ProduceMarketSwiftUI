@@ -10,11 +10,19 @@ import UIKit
 import Alamofire
 import Alamofire_SwiftyJSON
 
-class FirstViewController: UIViewController {
+class FirstViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
+            .responseSwiftyJSON({ (request, response, json, error) in
+                print(json)
+                print(error)
+            })
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
